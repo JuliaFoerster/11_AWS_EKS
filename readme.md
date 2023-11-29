@@ -36,8 +36,19 @@ fargateProfiles:
 #### 3. Create Cluster using eksctl 
 <code>eksctl create cluster -f cluster.yaml</code>
 
+#### 4. Configure kubectl to connect to the cluster
+```sh
+# Check region (needs to be the same as in our cluster)
+aws config list
 
-##### Deletion of cluster:
+# Create kubeconfig file (with information on how to connect to our cluster)
+aws eks update-kubeconfig --name eks-cluster-test demo-cluster
+
+# Validate:
+cat ./kube/config
+```
+
+#### Deletion of cluster:
 <code>eksctl delete cluster --name demo-cluster</code>
 </details>
 
