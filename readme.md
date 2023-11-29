@@ -5,6 +5,40 @@
 </summary>
 <br>
 You decide to create an EKS cluster - the managed Kubernetes Service of AWS. To simplify the whole creation and configurations, you use eksctl.With eksctl you create an EKS cluster with 3 Nodes and 1 Fargate profile
+
+### Solution:
+# 1. Install eksctl   
+```sh
+brew tap weaveworks/tap
+brew install weaveworks/tap/eksctl
+```
+
+#### 2. Create YAML (cluster.yaml)
+``` sh
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo-cluster
+  region: eu-west-3
+
+nodeGroups:
+  - name: node-group-1
+    desiredCapacity: 3
+    instanceType: t2.micro
+
+fargateProfiles:
+  - name: fargate-profile-1
+    selectors:
+      - namespace: default
+```
+
+#### 3. Create Cluster using eksctl 
+<code>eksctl create cluster -f cluster.yaml</code>
+
+
+##### Deletion of cluster:
+<code>eksctl delete cluster --name demo-cluster</code>
 </details>
 
 
