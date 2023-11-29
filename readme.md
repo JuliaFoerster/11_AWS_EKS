@@ -7,7 +7,7 @@
 You decide to create an EKS cluster - the managed Kubernetes Service of AWS. To simplify the whole creation and configurations, you use eksctl.With eksctl you create an EKS cluster with 3 Nodes and 1 Fargate profile
 
 ### Solution:
-# 1. Install eksctl   
+#### 1. Install eksctl   
 ```sh
 brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
@@ -48,6 +48,12 @@ aws eks update-kubeconfig --name eks-cluster-test demo-cluster
 cat ./kube/config
 ```
 
+#### 5. Validate that cluster got created
+```sh
+kubectl get node
+kubectl get fargateprofile --cluster demo-cluster
+```
+
 #### Deletion of cluster:
 <code>eksctl delete cluster --name demo-cluster</code>
 </details>
@@ -58,6 +64,8 @@ cat ./kube/config
 </summary>
 <br>
 You deploy mysql and phpmyadmin on EC2 nodes with the same setup as before.
+<br>
+
 </details>
 
 
