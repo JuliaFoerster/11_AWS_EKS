@@ -51,7 +51,7 @@ cat ./kube/config
 #### 5. Validate that cluster got created
 ```sh
 kubectl get node
-kubectl get fargateprofile --cluster demo-cluster
+eksctl get fargateprofile --cluster demo-cluster
 ```
 
 #### Deletion of cluster:
