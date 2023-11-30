@@ -1,8 +1,8 @@
 # AWS EKS
 Useful commands:
 - <code>watch kubectl get pods,services,deployments --all-namespaces -o wide</code>
-- <code>kubectl rollout restart deployment <NAME_DEPLOYMENT> -n <NAMESPACE> </code>
-- <code>kubectl get events --field-selector involvedObject.name=<POD_NAME> -n <NAMESPACE> </code>
+- <code>kubectl rollout restart deployment NAME_DEPLOYMENT -n NAMESPACE </code>
+- <code>kubectl get events --field-selector involvedObject.name=POD_NAME -n NAMESPACE </code>
 
 
 <details>
