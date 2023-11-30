@@ -142,6 +142,8 @@ kubectl create secret docker-registry my-registry-key1 \
 <code>kubectl apply -f mysql-configmap.yaml</code><br>
 <code>kubectl apply -f deployment.yaml</code><br>
 
+
+*** Fix: CrashLoop for Java APP!!! ***
 </details>
 
 
