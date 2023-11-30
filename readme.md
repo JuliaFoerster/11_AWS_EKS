@@ -103,7 +103,7 @@ helm install mysql bitnami/mysql -f sql-replica.yaml
 
 #### 4. Port-forward traffic coming to localhost
 Forward traffic from your local machine's port 8081 to the phpmyadmin-service service's port 8081.
-<code>kubectl port forward svc/phpmyadmin-service 8081:8081</code> <br>
+<code>kubectl port-forward svc/phpmyadmin-service 8081:8081</code> <br>
 
 #### 5. Access phomyadmin in browser on
 <code>localhost:8081</code> <br>
