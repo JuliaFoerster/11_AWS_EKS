@@ -2,15 +2,15 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: demo-cluster
+  name: jane-cluster
   region: eu-west-3
 
 nodeGroups:
-  - name: node-group-1
+  - name: my-node-group
     desiredCapacity: 3
     instanceType: t2.micro
 
 fargateProfiles:
-  - name: fargate-profile-1
+  - name: my-fargate-profile
     selectors:
-      - namespace: default
+      - namespace: my-app
